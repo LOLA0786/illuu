@@ -1,0 +1,17 @@
+PyJWT==2.8.0
+aioredis==2.0.1
+asyncpg==0.29.0
+bcrypt==4.1.2
+cryptography==41.0.7
+faker==21.0.0
+fastapi==0.109.0
+httpx==0.25.2
+hvac==1.2.1
+prometheus-client==0.19.0
+pydantic==2.5.0
+python-dotenv==1.0.0
+python-json-logger==2.0.7
+python-multipart==0.0.6
+requests==2.31.0
+structlog==23.2.0
+uvicorn[standard]==0.27.0

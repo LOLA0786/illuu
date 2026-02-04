@@ -1,0 +1,16 @@
+[tool.black]
+line-length = 100
+include = '\\.pyi?$'
+exclude = '''
+/(
+  \.git
+| \.venv
+| vault/legacy
+| vault/legacy/.+
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 100
+skip = [".venv", "vault/legacy"]

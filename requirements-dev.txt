@@ -1,0 +1,11 @@
+black
+isort
+flake8
+mypy
+pipreqs
+pre-commit
+pytest
+pytest-asyncio
+pytest-cov
+pytest-timeout
+locust
