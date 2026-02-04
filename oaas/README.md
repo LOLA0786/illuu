@@ -15,3 +15,6 @@ OAAS is a high-frequency, neural-accelerated engine built on a **Nesterov-Kalman
 
 ---
 *Built solo with Gemini. Orchestrating the future of efficient systems.*
+
+## Purpose
+Describe why this module exists and its long-term responsibility.

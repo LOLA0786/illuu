@@ -20,3 +20,6 @@ PrivateVault is a multi-cloud (GCP/AWS/Azure) governance mesh designed for 2026'
 
 ---
 *Built by Chandan & Gemini. We are rocking the AI space.*
+
+## Purpose
+Describe why this module exists and its long-term responsibility.

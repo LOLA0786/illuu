@@ -15,3 +15,6 @@ This service is:
 - Orchestrator-agnostic
 
 No agent executes actions here.
+
+## Purpose
+Describe why this module exists and its long-term responsibility.

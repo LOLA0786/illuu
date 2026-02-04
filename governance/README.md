@@ -77,3 +77,6 @@ Choubis is built to be "Simple yet Complicated."
 ---
 Built by [Chandan Galani](https://github.com/LOLA0786) | [Pentaprime Solutions](https://github.com/LOLA0786)
  3d68cb2 (feat: initial sovereign infrastructure for AI Governance (Choubis v0.1))
+
+## Purpose
+Describe why this module exists and its long-term responsibility.

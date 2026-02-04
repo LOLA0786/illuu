@@ -229,3 +229,6 @@ pip install intent-engine
 CHANDAN GALANI 
 X @chandangalani
 https://www.linkedin.com/in/chandangalani/
+
+## Purpose
+Describe why this module exists and its long-term responsibility.
