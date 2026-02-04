@@ -1,20 +1,11 @@
-# INTEGRATIONS
+# Integrations Architecture
 
-## Purpose
-Describe why this module exists and its long-term responsibility.
+## Layout
+- base/: connector interface and lifecycle
+- auth/: SSO adapters
+- adapters/: migrated legacy connectors
+- mocks/: testing doubles
 
-## Scope
-- In scope:
-- Out of scope:
-
-## Interfaces
-List public interfaces and integration points.
-
-## Testing
-Describe unit and integration test strategy for this module.
-
-## Ownership
-Define the owning team or role and code stewardship expectations.
-
-## Architecture Notes
-- TBD: Document internal layout, dependencies, and extension points.
+## Dependency Direction
+- Core modules call integrations via registry.
+- Integrations use vault for secrets and governance for audit.

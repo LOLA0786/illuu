@@ -1,0 +1,9 @@
+{
+  "connectors": [
+    {
+      "name": "mock",
+      "module": "integrations.mocks.mock_connector",
+      "class": "MockConnector"
+    }
+  ]
+}

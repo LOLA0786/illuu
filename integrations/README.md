@@ -1,17 +1,17 @@
-# INTEGRATIONS
+# Integrations
 
 ## Purpose
-Describe why this module exists and its long-term responsibility.
+Provide a unified, governed connector framework for external systems with consistent lifecycle, security, and auditability.
 
 ## Scope
-- In scope:
-- Out of scope:
+- In scope: connector interface, registry, lifecycle, auth adapters, mocks.
+- Out of scope: vendor business logic embedded in core modules.
 
 ## Interfaces
-List public interfaces and integration points.
+- integrations/base/connector.py
+- integrations/base/registry.py
+- integrations/base/lifecycle.py
 
 ## Testing
-Describe unit and integration test strategy for this module.
-
-## Ownership
-Define the owning team or role and code stewardship expectations.
+- Registry discovery tests
+- Mock connector lifecycle tests
