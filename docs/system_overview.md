@@ -23,6 +23,9 @@ illuu is an enterprise-grade Agent Operating System designed for governed, audit
 - api/: Control plane endpoints (no domain logic).
 - cli/: Operator tooling (no domain logic).
 
+## API Layer
+The unified API surface lives in api/ and exposes both namespaced and legacy-compatible routes. Legacy module APIs remain available via shims during consolidation.
+
 ## Dependency Direction
 Control plane modules depend on domain interfaces. Domain modules do not depend on control plane.
 

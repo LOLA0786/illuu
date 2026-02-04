@@ -22,10 +22,13 @@ def _set_default_env(key: str, value: str) -> None:
 
 def pytest_configure():
     # Ensure repo and src are importable in clean environments.
+    illuu_root = os.path.realpath(os.path.join(os.path.dirname(__file__), "..", ".."))
     repo_root = os.path.realpath(os.path.join(os.path.dirname(__file__), ".."))
     src_root = os.path.join(repo_root, "src")
+    if illuu_root not in sys.path:
+        sys.path.insert(0, illuu_root)
     if repo_root not in sys.path:
-        sys.path.insert(0, repo_root)
+        sys.path.insert(1, repo_root)
     if os.path.isdir(src_root) and src_root not in sys.path:
         sys.path.insert(0, src_root)
 
