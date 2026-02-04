@@ -1,4 +1,9 @@
-.PHONY: lint fmt test precommit
+.PHONY: setup lint fmt test precommit
+
+setup:
+	python3 -m venv .venv
+	.venv/bin/pip install -r requirements-dev.txt
+	.venv/bin/pre-commit install
 
 fmt:
 	black .
