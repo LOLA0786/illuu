@@ -1,0 +1,18 @@
+openapi: 3.0.0
+info:
+  title: Knowledge Vault API
+  version: 0.1.0
+
+paths:
+  /ingest:
+    post:
+      summary: Ingest knowledge
+  /query:
+    get:
+      summary: Query knowledge
+  /document/{id}:
+    get:
+      summary: Get document by ID
+  /audit/{id}:
+    get:
+      summary: Get audit trail

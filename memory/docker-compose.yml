@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  knowledge-vault:
+    build: .
+    container_name: knowledge-vault
+    ports:
+      - "8000:8000"
+    volumes:
+      - kv_data:/app/data
+    restart: unless-stopped
+
+  boss-ai:
+    build: .
+    container_name: boss-ai
+    command: uvicorn boss_ai.api:app --host 0.0.0.0 --port 9000
+    ports:
+      - "9000:9000"
+    depends_on:
+      - knowledge-vault
+    restart: unless-stopped
+
+volumes:
+  kv_data:
