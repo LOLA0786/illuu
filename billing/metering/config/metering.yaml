@@ -1,0 +1,8 @@
+version: 1
+meters:
+  - id: workflow_executions
+    unit: count
+  - id: governance_decisions
+    unit: count
+  - id: memory_queries
+    unit: count

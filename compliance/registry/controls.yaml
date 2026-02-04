@@ -1,0 +1,121 @@
+version: 1
+controls:
+  - id: C-001
+    name: Access Provisioning
+    description: IAM provisioning and deprovisioning is reviewed and logged.
+    standards:
+      soc2: [CC6.1, CC6.2]
+      iso27001: [A.5.15, A.5.16]
+      dpdp: [S8]
+    evidence:
+      - iam/access_reviews.json
+  - id: C-002
+    name: MFA for Privileged Access
+    description: All privileged access requires MFA.
+    standards:
+      soc2: [CC6.3]
+      iso27001: [A.5.17]
+      dpdp: [S8]
+    evidence:
+      - iam/mfa_policy_export.json
+  - id: C-003
+    name: Least Privilege Enforcement
+    description: Role policies restrict access to minimum required.
+    standards:
+      soc2: [CC6.6]
+      iso27001: [A.5.15, A.5.18]
+      dpdp: [S8]
+    evidence:
+      - iam/role_policy_diff.json
+  - id: C-004
+    name: Change Control
+    description: Changes are approved and auditable.
+    standards:
+      soc2: [CC8.1]
+      iso27001: [A.8.32]
+      dpdp: [S8]
+    evidence:
+      - cicd/approvals.json
+      - cicd/build_logs.json
+  - id: C-006
+    name: Audit Logging & Retention
+    description: Audit logs are immutable and retained.
+    standards:
+      soc2: [CC7.2]
+      iso27001: [A.8.15, A.8.16]
+      dpdp: [S8, S8.7]
+    evidence:
+      - audit/audit_log_snapshot.jsonl
+  - id: C-007
+    name: Data Retention & Deletion
+    description: Retention and deletion policies enforced and logged.
+    standards:
+      soc2: [CC3.1]
+      iso27001: [A.5.34]
+      dpdp: [S8.7]
+    evidence:
+      - retention/policy_enforcement.json
+  - id: C-008
+    name: Encryption In Transit
+    description: TLS enforced for service-to-service and external traffic.
+    standards:
+      soc2: [CC6.7]
+      iso27001: [A.8.24]
+      dpdp: [S8.5]
+    evidence:
+      - security/tls_scan.json
+  - id: C-009
+    name: Encryption At Rest
+    description: Storage is encrypted with tenant-specific keys.
+    standards:
+      soc2: [CC6.7]
+      iso27001: [A.8.24]
+      dpdp: [S8.5]
+    evidence:
+      - security/kms_config.json
+  - id: C-010
+    name: Incident Response
+    description: IR plan exists and is tested.
+    standards:
+      soc2: [CC7.3, CC7.4]
+      iso27001: [A.5.25, A.5.26]
+      dpdp: [S8.6]
+    evidence:
+      - incidents/postmortems.json
+      - incidents/drills.json
+  - id: C-011
+    name: Backup & Disaster Recovery
+    description: Backups and DR tests are performed and logged.
+    standards:
+      soc2: [CC7.2]
+      iso27001: [A.8.13, A.5.30]
+      dpdp: [S8]
+    evidence:
+      - dr/restore_tests.json
+  - id: C-012
+    name: Vendor Risk Management
+    description: Third-party vendors are reviewed and assessed.
+    standards:
+      soc2: [CC9.2]
+      iso27001: [A.5.19]
+      dpdp: [S8]
+    evidence:
+      - vendors/assessments.json
+  - id: C-013
+    name: Breach Notification
+    description: Breach notification procedures and logs exist.
+    standards:
+      soc2: [CC7.4]
+      iso27001: [A.5.25]
+      dpdp: [S8.6]
+    evidence:
+      - incidents/notifications.json
+  - id: C-014
+    name: Consent Management
+    description: Consent capture and withdrawal are tracked.
+    standards:
+      soc2: [CC2.1]
+      iso27001: [A.5.10, A.5.12]
+      dpdp: [S6, S7]
+    evidence:
+      - consent/records.json

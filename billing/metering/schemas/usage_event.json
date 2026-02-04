@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UsageEvent",
+  "type": "object",
+  "properties": {
+    "tenant_id": {"type": "string"},
+    "meter_id": {"type": "string"},
+    "value": {"type": "number"},
+    "timestamp": {"type": "string"}
+  },
+  "required": ["tenant_id", "meter_id", "value", "timestamp"]
+}

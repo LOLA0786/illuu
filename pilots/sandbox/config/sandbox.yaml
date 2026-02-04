@@ -1,0 +1,9 @@
+version: 1
+sandbox:
+  tenant_id: pilot-tenant
+  region: us-east-1
+  isolation: dedicated
+  kms_key: sandbox-key
+  logging: enabled
+  audit: enabled
+  shadow_mode: true

@@ -1,0 +1,29 @@
+version: 1
+controls:
+  - id: C-001
+    name: Access Provisioning
+    standards:
+      soc2: [CC6.1, CC6.2]
+      iso27001: [A.5.15, A.5.16]
+      dpdp: [S8]
+    evidence:
+      - type: iam_export
+        path: evidence/iam/access_reviews.json
+  - id: C-006
+    name: Audit Logging & Retention
+    standards:
+      soc2: [CC7.2]
+      iso27001: [A.8.15, A.8.16]
+      dpdp: [S8]
+    evidence:
+      - type: audit_log_snapshot
+        path: logs/audit.jsonl
+  - id: C-011
+    name: Backup & Disaster Recovery
+    standards:
+      soc2: [CC7.2]
+      iso27001: [A.8.13]
+      dpdp: [S8]
+    evidence:
+      - type: dr_test_report
+        path: evidence/dr/latest_report.json
