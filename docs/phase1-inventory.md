@@ -22,6 +22,15 @@ This inventory maps current folders to Phase 1 actions. It is the authoritative 
 - vault/governance-relay -> governance/
 - memory/uaal -> governance/
 - vault/security -> governance/
+- vault/policy_engine.py -> governance/internal/policy/
+- vault/policy_registry.py -> governance/internal/policy/
+- vault/guardrails.py -> governance/internal/policy/
+- vault/approval_store.py -> governance/internal/approval/
+- vault/approval_binding.py -> governance/internal/approval/
+- vault/ml_risk_model.py -> governance/internal/risk/
+- vault/audit_logger.py -> governance/internal/audit/
+- vault/decision_ledger.py -> governance/internal/audit/
+- vault/security_context.py -> governance/internal/security/
 - vault/governance/envoy -> governance/
 - vault/governance/opa -> governance/
 - memory/orchestrator -> workflows/
