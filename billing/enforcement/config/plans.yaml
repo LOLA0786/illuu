@@ -1,0 +1,10 @@
+version: 1
+plans:
+  - id: enterprise
+    limits:
+      workflow_executions: 1000000
+      governance_decisions: 2000000
+  - id: pilot
+    limits:
+      workflow_executions: 100000
+      governance_decisions: 200000
