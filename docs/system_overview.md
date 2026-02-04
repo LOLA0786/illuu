@@ -1,7 +1,7 @@
 # System Overview
 
 ## Purpose
-illuu is an enterprise-grade Agent Operating System designed for governed, auditable, and deterministic AI execution. This document provides a concise overview of system responsibilities, module boundaries, and operational guarantees.
+illuu is an enterprise-grade Agent Operating System designed for governed, auditable, and deterministic AI execution.
 
 ## Non-Negotiable Guarantees
 - All execution is governed.
@@ -34,6 +34,34 @@ Control plane modules depend on domain interfaces. Domain modules do not depend 
 5. Vault records ledger events.
 6. State layer checkpoints progress.
 7. Observability emits telemetry.
+
+## Dependency Diagram
+```mermaid
+graph TD
+  CLI[cli] --> API[api]
+  API --> KERNEL[kernel]
+  API --> WORKFLOWS[workflows]
+
+  KERNEL --> GOV[governance]
+  KERNEL --> MEM[memory]
+  KERNEL --> STATE[state]
+  KERNEL --> INTENT[intent]
+  KERNEL --> INTEG[integrations]
+  KERNEL --> OBS[observability]
+  KERNEL --> VAULT[vault]
+
+  WORKFLOWS --> GOV
+  WORKFLOWS --> MEM
+  WORKFLOWS --> STATE
+  WORKFLOWS --> INTENT
+  WORKFLOWS --> INTEG
+  WORKFLOWS --> OBS
+  WORKFLOWS --> VAULT
+
+  GOV --> VAULT
+  MEM --> VAULT
+  OAAS[oaas] --> INTEG
+```
 
 ## References
 - docs/adr/ADR-0001-canonical-module-boundaries.md
