@@ -26,6 +26,9 @@ illuu is an enterprise-grade Agent Operating System designed for governed, audit
 ## API Layer
 The unified API surface lives in api/ and exposes both namespaced and legacy-compatible routes. Legacy module APIs remain available via shims during consolidation.
 
+## Observability Layer
+observability/ contains vendor-agnostic logging, tracing, metrics, and dashboard assets. Legacy monitoring assets are being migrated from vault/monitoring with compatibility shims.
+
 ## Dependency Direction
 Control plane modules depend on domain interfaces. Domain modules do not depend on control plane.
 

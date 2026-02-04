@@ -64,5 +64,5 @@ This inventory maps current folders to Phase 1 actions. It is the authoritative 
 - vault/verify2-results-* -> vault/legacy/test-artifacts/
 
 ## Notes
-- This file is a plan with partial execution; governance and API moves are in progress with shims.
+- This file is a plan with partial execution; governance, API, and observability moves are in progress with shims.
 - Decisions that add new canonical modules require an ADR.
