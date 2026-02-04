@@ -1,0 +1,1 @@
+"""OIDC placeholder implementation."""

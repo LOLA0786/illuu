@@ -29,6 +29,9 @@ The unified API surface lives in api/ and exposes both namespaced and legacy-com
 ## Observability Layer
 observability/ contains vendor-agnostic logging, tracing, metrics, and dashboard assets. Legacy monitoring assets are being migrated from vault/monitoring with compatibility shims.
 
+## Integrations Layer
+integrations/ hosts the unified connector framework and adapters for external systems. Legacy connectors are migrated into integrations/adapters with compatibility shims.
+
 ## Dependency Direction
 Control plane modules depend on domain interfaces. Domain modules do not depend on control plane.
 

@@ -43,6 +43,9 @@ This inventory maps current folders to Phase 1 actions. It is the authoritative 
 - vault/privatevault-cli -> cli/
 - vault/migrations -> state/migrations
 - vault/config -> module-specific config/
+- vault/connectors -> integrations/adapters/vault_connectors
+- memory/adapters -> integrations/adapters/memory_adapters
+- intent/adapters -> integrations/adapters/intent_adapters
 
 ## Extract (Canonical Subfolders)
 - vault/ledgers -> vault/ledger/
