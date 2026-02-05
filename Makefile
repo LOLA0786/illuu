@@ -24,5 +24,5 @@ precommit:
 
 test:
 	$(PYTHON) -m compileall .
-	pipreqs --use-local --diff requirements.txt .
-	pytest -q
+	$(PYTHON) -m pipreqs --use-local --diff requirements.txt .
+	$(PYTHON) -m pytest -q
