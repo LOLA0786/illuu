@@ -1,8 +1,8 @@
- illuu — Universal Trust Infrastructure Layer
+** illuu — Universal Trust Infrastructure Layer**
 
 Multi-tenant, identity-bound, rate-limited trust scoring infrastructure for cross-channel communication systems.
 
-🚀 What This Is
+**  What This Is**
 
 illuu is a backend trust infrastructure platform designed to provide:
 
