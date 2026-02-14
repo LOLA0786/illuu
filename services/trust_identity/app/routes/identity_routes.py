@@ -37,3 +37,16 @@ def register_identity(email: str, device_fingerprint: str):
         "public_key": public_key,
         "private_key": private_key
     }
+
+@router.get("/lookup")
+def lookup_identity(email: str):
+    db = SessionLocal()
+    identity = db.query(Identity).filter(Identity.email == email).first()
+
+    if not identity:
+        return {"exists": False}
+
+    return {
+        "exists": True,
+        "device_fingerprint": identity.device_fingerprint
+    }
