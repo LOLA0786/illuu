@@ -3,8 +3,11 @@ import requests
 from app.core.scorer import calculate_score
 from app.db import SessionLocal
 from app.models import TrustEvent, Tenant
+from app.rate_limiter import check_rate_limit
+from app.logger import get_logger
 
 router = APIRouter()
+logger = get_logger("trust_scoring")
 
 IDENTITY_VERIFY_URL = "http://127.0.0.1:8000/verify"
 IDENTITY_LOOKUP_URL = "http://127.0.0.1:8000/lookup"
@@ -25,10 +28,14 @@ def score_event(
     if not tenant or tenant.api_key != api_key:
         raise HTTPException(status_code=401, detail="Invalid API key")
 
+    # 🔒 Rate limit
+    check_rate_limit(tenant_id)
+
+    logger.info(f"Score request received tenant={tenant_id} email={email}")
+
     identity_verified = False
     device_match = False
 
-    # Signature verification
     if signature:
         try:
             verify_response = requests.post(
@@ -43,7 +50,6 @@ def score_event(
         except:
             identity_verified = False
 
-    # Device lookup
     try:
         lookup_response = requests.get(
             IDENTITY_LOOKUP_URL,
@@ -59,7 +65,8 @@ def score_event(
 
     trust_score = calculate_score(identity_verified, device_match, message, email)
 
-    # Persist event
+    logger.info(f"Score calculated={trust_score} tenant={tenant_id}")
+
     event = TrustEvent(
         tenant_id=tenant_id,
         email=email,
