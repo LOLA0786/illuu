@@ -1,16 +1,16 @@
-[tool.black]
-line-length = 100
-include = '\\.pyi?$'
-exclude = '''
-/(
-  \.git
-| \.venv
-| vault/legacy
-| vault/legacy/.+
-)/
-'''
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
 
-[tool.isort]
-profile = "black"
-line_length = 100
-skip = [".venv", "vault/legacy"]
+[project]
+name = "illuu"
+version = "0.1.0"
+description = "Illuu AI Operating System"
+authors = [{name="Chandan Galani"}]
+requires-python = ">=3.10"
+
+[tool.setuptools]
+packages = ["illuu"]
+
+[project.scripts]
+illuu = "illuu.cli.main:main"

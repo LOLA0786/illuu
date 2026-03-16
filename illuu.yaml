@@ -1,0 +1,9 @@
+system:
+  name: illuu
+
+agents:
+  enabled:
+    - example_agent
+
+observability:
+  logging: true
